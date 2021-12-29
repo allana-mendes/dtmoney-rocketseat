@@ -1,6 +1,6 @@
-import incomeImg from '../../assets/income.svg';
-import outcomeImg from '../../assets/outcome.svg';
-import totalImg from '../../assets/total.svg';
+import incomeImg from '../../assets/income.png';
+import outcomeImg from '../../assets/outcome.png';
+import totalImg from '../../assets/total.png';
 
 import { Container } from './styles';
 

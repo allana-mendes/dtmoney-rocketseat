@@ -8,9 +8,10 @@ export const Container = styled.div`
 
     div {
         background: var(--shape);
-        padding: 1.5rem 2rem;
-        border-radius: 0.25rem;
+        padding: 3rem 1.5rem;
+        border-radius: 1rem;
         color: var(--text-title);
+        box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.1);
         
         header {
             display: flex;
@@ -27,7 +28,7 @@ export const Container = styled.div`
         }
         
         &.highlight-bg{
-            background: var(--green);
+            background: var(--pink);
             color: var(--shape);
         }
     }

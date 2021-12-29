@@ -28,4 +28,19 @@ export const Content = styled.div`
             filter: brightness(0.9);
         }
     }
+
+    div {
+
+        &.app-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        }
+
+        h1 {
+            margin-left: 1rem;
+            color: var(--shape);
+        }
+    }
+    
 `; 
