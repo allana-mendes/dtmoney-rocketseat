@@ -1,65 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createServer } from 'miragejs';
+import { createServer, Model } from 'miragejs';
 import { App } from './App';
 
 createServer({
+  models: {
+    transaction: Model,
+  },
+
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'Freelancer de website',
+          type: 'deposit',
+          category: 'Desenvolvimento',
+          amount: 6000,
+          createdAt: new Date('2022-01-10 22:23:00'),
+        },
+        {
+          id: 2,
+          title: 'Aluguel',
+          type: 'withdraw',
+          category: 'Casa',
+          amount: 1400,
+          createdAt: new Date('2022-01-05 19:35:00'),
+        }
+      ]
+    })
+  },
+
   routes(){
     this.namespace = 'api';
 
     this.get('/transactions', () => {
-      return [
-        {
-          id: 1,
-          title: 'Transaction 1',
-          amount: 400,
-          type: 'deposito',
-          category: 'Food',
-          createdAt: new Date()
-        },
-        {
-          id: 2,
-          title: 'Transaction 1',
-          amount: 400,
-          type: 'deposito',
-          category: 'Food',
-          createdAt: new Date()
-        },
-        {
-          id: 3,
-          title: 'Transaction 1',
-          amount: 400,
-          type: 'deposito',
-          category: 'Food',
-          createdAt: new Date()
-        },
-        {
-          id: 4,
-          title: 'Transaction 1',
-          amount: 400,
-          type: 'deposito',
-          category: 'Food',
-          createdAt: new Date()
-        },
-        {
-          id: 5,
-          title: 'Transaction 1',
-          amount: 400,
-          type: 'deposito',
-          category: 'Lazer',
-          createdAt: new Date()
-        },
-        {
-          id: 6,
-          title: 'Transaction 1',
-          amount: 400,
-          type: 'deposito',
-          category: 'Food',
-          createdAt: new Date()
-        },
+      return this.schema.all('transaction')
+    })
 
+    this.post('/transactions', (schema, request) => {
+      const data = JSON.parse(request.requestBody)
 
-      ]
+      return schema.create('transaction', data);
     })
   }
 })
