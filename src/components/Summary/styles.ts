@@ -31,6 +31,7 @@ export const Container = styled.div`
             background: var(--pink);
             color: var(--shape);
         }
+
     }
 
 

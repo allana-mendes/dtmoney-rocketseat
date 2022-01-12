@@ -22,10 +22,10 @@ export const Content = styled.div`
         border-radius: 0.25rem;
         height: 3rem;
 
-        transition: filter 0.2s;
+        transition: transform 0.5s;
         
         &:hover {
-            filter: brightness(0.9);
+            transform: scale(1.05);
         }
     }
 
