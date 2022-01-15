@@ -6,9 +6,9 @@ export const GlobalStyle = createGlobalStyle`
         --red: #e52e4d;
         --green: #33cc95;
         --pink: #f55376;
-        --blue: #008F17;
+        --dark-green: #008F17;
 
-        --blue-light:#27C044;
+        --green-light:#27C044;
 
         --text-title: #363f5f;
         --text-body: #969cb3;
